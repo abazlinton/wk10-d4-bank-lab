@@ -7,8 +7,8 @@ describe("Bank", function(){
   var bank;
 
   beforeEach(function(){
-    var testAccounts = [{name: "Cyrus", balance: 1000, type: "legit"}];
-    bank = new Bank({name: "Legit (honest!) Ltd.", accounts: testAccounts});
+    var testAccountStub = [{name: "Cyrus", balance: 1000, type: "legit"}];
+    bank = new Bank({name: "Legit (honest!) Ltd.", accounts: testAccountStub});
   });
 
   it("has a name", function(){
@@ -17,6 +17,12 @@ describe("Bank", function(){
 
   it("can hold accounts", function(){
     assert.equal("Cyrus", bank.accounts[0].name);
+  });
+
+  it("can add an account", function(){
+    var testAccountStub2 = {name: "Jo", balance: 1, type: "legit"};
+    bank.addAccount(testAccountStub2);
+    assert.equal("legit", bank.accounts[1].type);
   });
 
 
