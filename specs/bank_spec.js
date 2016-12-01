@@ -25,6 +25,13 @@ describe("Bank", function(){
     assert.equal("legit", bank.accounts[1].type);
   });
 
+  it("can return a specific account by the account name", function(){
+    var testAccountStub2 = {name: "Jo", balance: 1, type: "legit"};
+    bank.addAccount(testAccountStub2);
+    var returnedAccount = bank.findAccountByName("Jo");
+    assert.equal("Jo", returnedAccount.name);
+  });
+
 
 
 });
