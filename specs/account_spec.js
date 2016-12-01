@@ -12,4 +12,9 @@ describe("Account", function(){
   it("has a balance", function(){
     assert.equal(100, account.balance);
   });
+
+  it("has a named account holder", function(){
+    assert.equal("Alex", account.name);
+  });
+
 });
